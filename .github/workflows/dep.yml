@@ -1,0 +1,21 @@
+---
+- name: Deploy EC2 instances, EFS, MySQL, and Apache on AWS
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Provision EC2 instance
+      include_role:
+        name: ec2_provision
+
+    - name: Create EFS file system
+      include_role:
+        name: efs_setup
+
+    - name: Install MySQL
+      include_role:
+        name: mysql_install
+
+    - name: Install Apache
+      include_role:
+        name: apache_install
