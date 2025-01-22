@@ -8,8 +8,6 @@ on:
 jobs:
   deploy:
     runs-on:  CentOS 7
-‎
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
