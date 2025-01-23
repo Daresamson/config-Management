@@ -1,0 +1,12 @@
+---
+- name: Create EC2 Instance
+  ec2_instance:
+    key_name: "{{ yes }}"
+    region: "{{ us-east-1 }}"
+    instance_type: t2.micro
+    image_id: "{{ ami-04b4f1a9cf54c11d0 }}"
+    wait: yes
+    group: "{{ sg-0381a89c1d05bd011 }}"
+    instance_tags:
+      Name: "MyInstance"
+  register: ec2
