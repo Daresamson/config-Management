@@ -31,16 +31,16 @@ jobs:
     - name: Set up AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.ACESS_KEY }}
-        aws-secret-access-key: ${{ secrets.SECRETE_KEY }}
-        aws-region: ${{ secrets.REGION}}
+        aws-access-key-id: ${{ secrets.MY_ACESS_KEY }}
+        aws-secret-access-key: ${{ secrets.MY_SECRET_KEY}}
+        aws-region: ${{ secrets.MY_REGION}}
     
     # Step 5: Run the Ansible Playbook
     - name: Run Ansible Playbook
       run: |
         # Ensure the inventory file exists or configure it as needed
         echo "[ec2_instances]" > inventory/aws_ec2.ini
-        echo "ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com" >> inventory/aws_ec2.ini  # Replace with your instance IP
+        echo "ec2-52.90.105.83.compute-1.amazonaws.com" >> inventory/aws_ec2.ini  # Replace with your instance IP
         
         # Run the Ansible playbook
         ansible-playbook -i inventory/aws_ec2.ini playbooks/deploy.yml
