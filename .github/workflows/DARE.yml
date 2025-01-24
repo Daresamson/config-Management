@@ -44,3 +44,4 @@ jobs:
         
         # Run the Ansible playbook
         ansible-playbook -i inventory/aws_ec2.ini playbooks/deploy.yml
+        
