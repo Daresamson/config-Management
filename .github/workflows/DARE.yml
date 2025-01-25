@@ -40,7 +40,7 @@ jobs:
       run: |
         # Ensure the inventory file exists or configure it as needed
         echo "[ec2_instances]" > inventory/aws_ec2.ini
-        echo "ec2-52.90.105.83.compute-1.amazonaws.com" >> inventory/aws_ec2.ini  # Replace with your instance IP
+        echo "ec2-3.83.25.34.compute-1.amazonaws.com" >> inventory/aws_ec2.ini  # Replace with your instance IP
         
         # Run the Ansible playbook
         ansible-playbook -i inventory/aws_ec2.ini playbooks/deploy.yml
