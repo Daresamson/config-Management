@@ -1,6 +1,1 @@
----
-- name: Setup Nginx as load balancer
-  hosts: load_balancers
-  become: true
-  roles:
-    - nginx
+
