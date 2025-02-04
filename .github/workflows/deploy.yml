@@ -1,1 +1,0 @@
-ansible-playbook -i inventory/aws_ec2.ini ansible_playbooks/deploy.yml
