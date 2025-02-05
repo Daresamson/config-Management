@@ -1,0 +1,23 @@
+name: Ansible Playbook Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Ansible
+        uses: devops-infra/action-ansible@v2
+        
+      - name: Run Ansible playbook
+        run: |
+          ansible-playbook -i inventories/dev/ansible_hosts playbooks/nginx.yml
+          ansible-playbook -i inventories/dev/ansible_hosts playbooks/app_servers.yml
+          ansible-playbook -i inventories/dev/ansible_hosts playbooks/mysql.yml
