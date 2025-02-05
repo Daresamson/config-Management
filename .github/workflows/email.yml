@@ -1,0 +1,6 @@
+- name: Send failure email
+  mail:
+    to: "devops@example.com"
+    subject: "Deployment failed"
+    body: "An error occurred during the deployment of the {{ environment }} environment."
+  when: deployment_failed
