@@ -1,0 +1,9 @@
+- name: Ensure MySQL is running
+  service:
+- name: mysql
+    state:started
+    enabled: true
+  retries: 3
+  delay: 10
+  register: mysql_status
+  until: mysql_status.state == "started
