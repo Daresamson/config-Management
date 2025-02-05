@@ -1,0 +1,5 @@
+- name: Send success notification to Slack
+  slack_notify:
+    token: "{{ slack_token }}"
+    channel: "#deployments"
+    text: "Deployment successful for environment {{ ansible_hostname }}"
