@@ -1,0 +1,13 @@
+tasks:
+  - block:
+      - name: Create MySQL user
+        mysql_user:
+          name: "{{ db_user }}"
+          password: "{{ db_password }}"
+          priv: "*.*:ALL"
+          state: present
+    rescue:
+      - name: Rollback - Remove MySQL user
+        mysql_user:
+          name: "{{ db_user }}"
+          state: absent
